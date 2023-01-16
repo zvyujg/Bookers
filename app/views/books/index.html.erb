@@ -1,14 +1,140 @@
+<h1>Books</h1>
+
+<table>
+    <thead>
+        <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th colspan="3"></th>
+        </tr>
+    </thead>
+</table>
+<tr>
+    <td>リーダブルコート</td>
+    <td> より良いコードを書くためのシンプルで実践的なテクニック</td>
+    <td>
+       <a class="show_124483" href="/books/124483">Show</a>
+    </td>
+    <td>
+        <a class="edit_124483" href="/books/124483/edit">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124483" rel="nofollow" data-method="delete" href="/books/124483">Destroy</a>
+    </td>
+</tr>
+<tr>
+    <td>トラブル知らずのシステム設計</td>
+    <td>システム設計の要点を図解で説明してくれます</td>
+    <td>
+        <a class="edit_124484" href="/books/124484">Show</a>
+    </td>
+    <td>
+        <a class="edit_124484" href="/books/124484">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124484" rel="nofollow" data-method="delete" href="/books/124484">Destroy</a>
+    </td>
+</tr>
+<tr>
+    <td>たのしいRuby</td>
+    <td>Rubyの入門におすすめです</td>
+    <td>
+        <a class="edit_124485" href="/books/124485">Show</a>
+    </td>
+    <td>
+        <a class="edit_124485" href="/books/124485">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124485" rel="nofollow" data-method="delete" href="/books/124485">Destroy</a>
+    </td>
+</tr>
+<tr>
+    <td>入門git</td>
+    <td>gitについての基本操作から内部構造まで解説してくれます</td>
+    <td>
+        <a class="edit_124486" href="/books/124486">Show</a>
+    </td>
+    <td>
+        <a class="edit_124486" href="/books/124486">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124486" rel="nofollow" data-method="delete" href="/books/124486">Destroy</a>
+    </td>
+</tr>
+<tr>
+    <td>アルゴリズム図鑑</td>
+    <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
+    <td>
+        <a class="edit_124487" href="/books/124487">Show</a>
+    </td>
+    <td>
+        <a class="edit_124487" href="/books/124487">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124487" rel="nofollow" data-method="delete" href="/books/124487">Destroy</a>
+    </td>
+</tr>
+<tr>
+    <td>達人プログラマー</td>
+    <td>プログラマ入門者は必読！</td>
+    <td>
+        <a class="edit_124488" href="/books/124488">Show</a>
+    </td>
+    <td>
+        <a class="edit_124488" href="/books/124488">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124488" rel="nofollow" data-method="delete" href="/books/124488">Destroy</a>
+    </td>
+</tr>
+<tr>
+    <td>データベース実践入門</td>
+    <td>効率的なSQL文を教えてくれます</td>
+    <td>
+        <a class="edit_124489" href="/books/124489">Show</a>
+    </td>
+    <td>
+        <a class="edit_124489" href="/books/124489">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124489" rel="nofollow" data-method="delete" href="/books/124489">Destroy</a>
+    </td>
+</tr>
+<tr>
+    <td>afdafs</td>
+    <td>fdafda</td>
+    <td>
+        <a class="edit_124490" href="/books/124490">Show</a>
+    </td>
+    <td>
+        <a class="edit_124490" href="/books/124490">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124490" rel="nofollow" data-method="delete" href="/books/124490">Destroy</a>
+    </td>
+</tr>
+<tr>
+    <td>tets1</td>
+    <td>test1</td>
+    <td>
+        <a class="edit_124491" href="/books/124491">Show</a>
+    </td>
+    <td>
+        <a class="edit_124491" href="/books/124491">Edit</a>
+    </td>
+    <td>
+        <a data-confirm="Are you sure?" class="destroy_124491" rel="nofollow" data-method="delete" href="/books/124491">Destroy</a>
+    </td>
+</tr>
+
 <h1>New book</h1>
+<!--form_with部分-->
+<%=form_with model: @book,url:'/books',method: :post do |f| %>
+<h4>Title</h4>
+<%=f.text_field:title %>
 
-<% @books.each do |book|%>
+<h4>Body</h4>
+<%=f.text_area:body %>
 
-<P>Title</P>
-<span>
-    <%=link_to book.title, "/books/#{book.id}"%>
-</span>
-<P>Body</P>
-<span>
-    <%=link_to book.body, "/books/#{book.id}"%>
-</span>
-
+<%=f.submit'Create Book'%>
 <% end %>
